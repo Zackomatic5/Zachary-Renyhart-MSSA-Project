@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Zachary_Renyhart_MSSA_Project.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Zachary_Renyhart_MSSA_Project"
+    Shell.FlyoutBehavior="Disabled"
+    Title="Zachary_Renyhart_MSSA_Project">
+
+    <ShellContent
+        Title="Project"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+</Shell>

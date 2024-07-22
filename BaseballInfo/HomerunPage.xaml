@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zachary_Renyhart_MSSA_Project.NewFolder.HomerunPage"
+             Title="HomerunPage" BackgroundColor="Black">
+    <VerticalStackLayout>
+        <Label 
+            Text="A 'Homerun' is where a player hits the ball over the fence or out of the park over every fielders heads, the player and players on any base get to jog around all the bases and score together! " TextColor="White" FontSize="Medium"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Image Source="designer_homerun.png" Margin="5" HeightRequest="450" WidthRequest="400" Aspect="Fill"/>
+
+        
+    </VerticalStackLayout>
+</ContentPage>

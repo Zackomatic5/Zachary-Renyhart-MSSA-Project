@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zachary_Renyhart_MSSA_Project.NewFolder.DoublePage"
+             Title="DoublePage"
+             BackgroundColor="Black">
+    <VerticalStackLayout>
+        <Label 
+            Text="A 'Double' is where the player hits the ball away from every fielder on the field and reaches second base without getting out, normally this is a ball hit down the line or in between outfields where they have more time to reach extra bases." TextColor="White" FontSize="Medium"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Image Source="designer_double.jpeg" Margin="5" HeightRequest="450" WidthRequest="400" Aspect="Fill"/>
+
+        
+        
+    </VerticalStackLayout>
+</ContentPage>

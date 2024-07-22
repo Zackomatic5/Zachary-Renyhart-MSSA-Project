@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zachary_Renyhart_MSSA_Project.NewFolder.BaseballStats"
+      
+             Title="BaseballStats" x:Name="BaseballTitle" BackgroundColor="Black">
+    <ScrollView>
+    <VerticalStackLayout>
+
+            <Image Source="mlblogo.png" HeightRequest="120" />
+            <Label 
+            Text="Need any information? Click a button down below!" FontSize="16" TextColor="White"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <!--<Button Text="Baseball" BackgroundColor="White" FontSize="Title" TextColor="Black" Clicked="OnBaseballStatsClicked"></Button>-->
+
+        
+       
+
+        <Button x:Name="Hit" Text="Hit" SemanticProperties.Hint="Displays a hit information page" BackgroundColor="Blue" Clicked="HitClicked" HorizontalOptions="Fill" Margin="5" />
+        <Button x:Name="Single" Text="Single" SemanticProperties.Hint="Displays a single information page" BackgroundColor="Gray" Clicked="SingleClicked" HorizontalOptions="Fill" Margin="5" />
+        <Button x:Name="Double" Text="Double" SemanticProperties.Hint="Displays a double information page" BackgroundColor="Blue" Clicked="DoubleClicked" HorizontalOptions="Fill" Margin="5" />
+        <Button x:Name="Triple" Text="Triple" SemanticProperties.Hint="Displays a triple information page" BackgroundColor="Gray" Clicked="TripleClicked" HorizontalOptions="Fill" Margin="5" />
+        <Button x:Name="Homerun" Text="Homerun" SemanticProperties.Hint="Displays a homerun information page" BackgroundColor="Blue" Clicked="HomerunClicked" HorizontalOptions="Fill" Margin="5" />
+        <Button x:Name="Walk" Text="Walk" SemanticProperties.Hint="Displays a walk information page" BackgroundColor="Gray" Clicked="WalkClicked" HorizontalOptions="Fill" Margin="5" />
+        <Button x:Name="HitByPitch" Text="Hit By Pitch" SemanticProperties.Hint="Displays a hit by pitch information page" BackgroundColor="Blue" Clicked="HitByPitchClicked" HorizontalOptions="Fill" Margin="5" />
+        <Button x:Name="Strikeout" Text="Strikeout" SemanticProperties.Hint="Displays a strikeout information page" BackgroundColor="Gray" Clicked="StrikeoutClicked" HorizontalOptions="Fill" Margin="5" />
+        <Button x:Name="AllStats" Text="Update all stats" TextColor="Black" SemanticProperties.Hint="Displays the update all stats page" BackgroundColor="White" Clicked="AllStatsClicked" HorizontalOptions="Fill" Margin="5" />
+
+        </VerticalStackLayout>
+
+
+    
+        
+        
+    </ScrollView>
+
+</ContentPage>

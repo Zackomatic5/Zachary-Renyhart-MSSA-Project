@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zachary_Renyhart_MSSA_Project.NewFolder.StrikeoutPage"
+             Title="StrikeoutPage" BackgroundColor="Black">
+    <VerticalStackLayout>
+        <Label 
+            Text="A 'Strikeout' is where a player gets thrown 3 pitches that are inside of the strikezone, the player can swing and miss, or hit it foul. If the player foultips or misses 3 combined pitches, they are OUT! The count must be 0-3 " TextColor="White" FontSize="Medium"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Image Source="designer_strikeout.png" Margin="5" HeightRequest="450" WidthRequest="400" Aspect="Fill"/>
+
+    </VerticalStackLayout>
+</ContentPage>
