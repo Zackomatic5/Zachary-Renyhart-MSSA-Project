@@ -34,9 +34,7 @@ namespace Zachary_Renyhart_MSSA_Project
             {
                 LogInText.Text = "You entered the wrong Username or Password!!";
                 await DisplayAlert(LogInText.Text, StyleId, "Please try again!");
-                
-                
-               
+                            
             }
 
 
@@ -44,6 +42,12 @@ namespace Zachary_Renyhart_MSSA_Project
         private async void RegisterButtonClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Register());
+        }
+
+        void OnCheckBoxCheckChanged(object sender, CheckedChangedEventArgs e)
+        {
+            Password.IsPassword = !Password.IsPassword;
+           
         }
     }
 

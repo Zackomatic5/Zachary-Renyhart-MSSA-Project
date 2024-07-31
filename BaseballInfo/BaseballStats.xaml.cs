@@ -1,4 +1,4 @@
-using Zachary_Renyhart_MSSA_Project.BaseballInfo;
+using Zachary_Renyhart_MSSA_Project.View;
 
 namespace Zachary_Renyhart_MSSA_Project.NewFolder;
 

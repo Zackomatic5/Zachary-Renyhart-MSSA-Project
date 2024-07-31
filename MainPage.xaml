@@ -23,13 +23,12 @@
             <Label
                 x:Name="LogInText" Text="Please log in below!" TextColor="White" FontSize="Medium"
                 Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"         
-                 />
+                SemanticProperties.HeadingLevel="Level2"/>
 
             <Entry Placeholder="Please enter your email" x:Name="Username" TextColor="LightBlue"/>
             <Entry Placeholder="Please enter your password" x:Name="Password" TextColor="LightBlue"  IsPassword="True"/>
+            <CheckBox x:Name="PasswordCheckBox" Color="Red" IsChecked="False" CheckedChanged="OnCheckBoxCheckChanged"/>
 
-           
             <Button
                 x:Name="CounterBtn"
                 TextColor="White"

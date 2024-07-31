@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zachary_Renyhart_MSSA_Project.View.AllStatsPage"
+             xmlns:local="clr-namespace:Zachary_Renyhart_MSSA_Project"
+             xmlns:model="clr-namespace:Zachary_Renyhart_MSSA_Project.Models"
+             Title="Player Stats" BackgroundColor="LightGray">
+    <ScrollView>
+    <VerticalStackLayout
+        Padding="30,0"
+        Spacing="25">
+        
+
+
+            <CollectionView
+            
+            Grid.RowSpan="1"
+            ItemsSource="{Binding PlayerCollection}"
+            SelectionMode="Single"
+            SelectionChanged="OnCollectionViewSelectionChanged">
+            <CollectionView.ItemTemplate>
+                <DataTemplate 
+                    x:DataType="model:AllStats">
+                    <Grid Padding="10">
+                        <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                            </Grid.ColumnDefinitions>
+                        
+                        
+                        <Label Text="Name: " Grid.Column="0" Grid.Row="0" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30"/>
+                        <Label Grid.Column="1" Grid.Row="0" Text="{Binding Name}" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30" HorizontalTextAlignment="Center"/>
+
+                        <Label Text="At Bats: " Grid.Column="0" Grid.Row="1" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30"/>
+                        <Label  Grid.Column="1" Grid.Row="1" Text="{Binding Atbats}" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30" HorizontalTextAlignment="Center"/>
+
+                        <Label Text="Batting Average: " Grid.Column="0" Grid.Row="2" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30"/>
+                        <Label x:Name="AverageNumberText" Grid.Column="1" Grid.Row="2" Text="{Binding Average, StringFormat='{0:F3}'}" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30" HorizontalTextAlignment="Center"/>
+
+                        <Label Text="On Base Percentage: " Grid.Column="0" Grid.Row="3" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30"/>
+                        <Label x:Name="AverageOBPText" Grid.Column="1" Grid.Row="3" Text="{Binding Onbasepercentage, StringFormat='{0:F3}'}" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30" HorizontalTextAlignment="Center"/>
+
+                        <Label Text="Hits: " Grid.Column="0" Grid.Row="4" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30"/>
+                        <Label  Grid.Column="1" Grid.Row="4" Text="{Binding Hit}" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30" HorizontalTextAlignment="Center"/>
+                       
+                        
+                        <Label Text="Singles: " Grid.Column="0" Grid.Row="5" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30"/>
+                        <Label Grid.Column="1"  Grid.Row="5" Text="{Binding Single}" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30" HorizontalTextAlignment="Center"/>
+                        <Button x:Name="AddSingleButton" CommandParameter="{Binding .}" Text="+" Grid.Column="2" Grid.Row="5" SemanticProperties.Hint="Adds number of singles" BackgroundColor="Blue" Clicked="AddSingleClicked" HorizontalOptions="Fill" Margin="5" />
+                        <Button x:Name="DeleteSingleButton" CommandParameter="{Binding .}" Text="-" Grid.Column="3" Grid.Row="5" SemanticProperties.Hint="Deletes number of singles" BackgroundColor="Blue" Clicked="DeleteSingleClicked" HorizontalOptions="Fill" Margin="5" />
+
+
+                        <Label Text="Doubles: " Grid.Column="0" Grid.Row="6" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30"/>
+                        <Label Grid.Column="1"  Grid.Row="6" Text="{Binding Doubles}" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30" HorizontalTextAlignment="Center"/>
+                        <Button x:Name="AddDoubleButton" CommandParameter="{Binding .}" Text="+" Grid.Column="2" Grid.Row="6" SemanticProperties.Hint="Adds number of doubles" BackgroundColor="Blue" Clicked="AddDoubleClicked" HorizontalOptions="Fill" Margin="5" />
+                        <Button x:Name="DeleteDoubleButton" CommandParameter="{Binding .}" Text="-" Grid.Column="3" Grid.Row="6" SemanticProperties.Hint="Deletes number of doubles" BackgroundColor="Blue" Clicked="DeleteDoubleClicked" HorizontalOptions="Fill" Margin="5" />
+
+
+                        <Label Text="Triples: " Grid.Column="0" Grid.Row="7" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30"/>
+                        <Label Grid.Column="1"  Grid.Row="7" Text="{Binding Triple}" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30" HorizontalTextAlignment="Center"/>
+                        <Button x:Name="AddTripleButton" CommandParameter="{Binding .}" Text="+" Grid.Column="2" Grid.Row="7" SemanticProperties.Hint="Adds number of triples" BackgroundColor="Blue" Clicked="AddTripleClicked" HorizontalOptions="Fill" Margin="5" />
+                        <Button x:Name="DeleteTripleButton" CommandParameter="{Binding .}" Text="-" Grid.Column="3" Grid.Row="7" SemanticProperties.Hint="Deletes number of triples" BackgroundColor="Blue" Clicked="DeleteTripleClicked" HorizontalOptions="Fill" Margin="5" />
+
+
+                        <Label Text="Homeruns: " Grid.Column="0" Grid.Row="8" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30"/>
+                        <Label Grid.Column="1"  Grid.Row="8" Text="{Binding Homerun}" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30" HorizontalTextAlignment="Center"/>
+                        <Button x:Name="AddHomerunButton" CommandParameter="{Binding .}" Text="+" Grid.Column="2" Grid.Row="8" SemanticProperties.Hint="Adds number of homeruns" BackgroundColor="Blue" Clicked="AddHomerunClicked" HorizontalOptions="Fill" Margin="5" />
+                        <Button x:Name="DeleteHomerunButton" CommandParameter="{Binding .}" Text="-" Grid.Column="3" Grid.Row="8" SemanticProperties.Hint="Deletes number of homeruns" BackgroundColor="Blue" Clicked="DeleteHomerunClicked" HorizontalOptions="Fill" Margin="5" />
+
+
+                        <Label Text="Walks: " Grid.Column="0" Grid.Row="9" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30"/>
+                        <Label Grid.Column="1"  Grid.Row="9" Text="{Binding Walk}" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30" HorizontalTextAlignment="Center"/>
+                        <Button x:Name="AddWalkButton" CommandParameter="{Binding .}" Text="+" Grid.Column="2" Grid.Row="9" SemanticProperties.Hint="Adds number of walks" BackgroundColor="Blue" Clicked="AddWalkClicked" HorizontalOptions="Fill" Margin="5" />
+                        <Button x:Name="DeleteWalkButton" CommandParameter="{Binding .}" Text="-" Grid.Column="3" Grid.Row="9" SemanticProperties.Hint="Deletes number of walks" BackgroundColor="Blue" Clicked="DeleteWalkClicked" HorizontalOptions="Fill" Margin="5" />
+
+
+                        <Label Text="Hit By Pitches: " Grid.Column="0" Grid.Row="10" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30"/>
+                        <Label Grid.Column="1"  Grid.Row="10" Text="{Binding Hitbypitch}" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30" HorizontalTextAlignment="Center"/>
+                        <Button x:Name="AddHitByPitchButton" CommandParameter="{Binding .}" Text="+" Grid.Column="2" Grid.Row="10" SemanticProperties.Hint="Adds number of HPS's" BackgroundColor="Blue" Clicked="AddHBPClicked" HorizontalOptions="Fill" Margin="5" />
+                        <Button x:Name="DeleteHitByPitchButton" CommandParameter="{Binding .}" Text="-" Grid.Column="3" Grid.Row="10" SemanticProperties.Hint="Deletes number of HPS's" BackgroundColor="Blue" Clicked="DeleteHBPClicked" HorizontalOptions="Fill" Margin="5" />
+
+
+                        <Label Text="Strikeouts: " Grid.Column="0" Grid.Row="11" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30"/>
+                        <Label Grid.Column="1"  Grid.Row="11" Text="{Binding Strikeout}" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30" HorizontalTextAlignment="Center"/>
+                        <Button x:Name="AddStrikeoutButton" CommandParameter="{Binding .}" Text="+" Grid.Column="2" Grid.Row="11" SemanticProperties.Hint="Adds number of strikeouts" BackgroundColor="Blue" Clicked="AddStrikeoutClicked" HorizontalOptions="Fill" Margin="5" />
+                        <Button x:Name="DeleteStrikeoutButton" CommandParameter="{Binding .}" Text="-" Grid.Column="3" Grid.Row="11" SemanticProperties.Hint="Deletes number of strikeout" BackgroundColor="Blue" Clicked="DeleteStrikeoutClicked" HorizontalOptions="Fill" Margin="5" />
+
+
+                        <Label Text="In Play Out: " Grid.Column="0" Grid.Row="12" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30"/>
+                        <Label Grid.Column="1"  Grid.Row="12" Text="{Binding Outs}" FontSize="Medium" AbsoluteLayout.LayoutFlags="PositionProportional" HeightRequest="30" HorizontalTextAlignment="Center"/>
+                        <Button x:Name="AddOutButton" CommandParameter="{Binding .}" Text="+" Grid.Column="2" Grid.Row="12" SemanticProperties.Hint="Adds number of outs" BackgroundColor="Blue" Clicked="AddOutClicked" HorizontalOptions="Fill" Margin="5" />
+                        <Button x:Name="DeleteOuttButton" CommandParameter="{Binding .}" Text="-" Grid.Column="3" Grid.Row="12" SemanticProperties.Hint="Deletes number of outs" BackgroundColor="Blue" Clicked="DeleteOutClicked" HorizontalOptions="Fill" Margin="5" />
+
+                        </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+    </VerticalStackLayout>
+</ScrollView>
+    
+</ContentPage>
